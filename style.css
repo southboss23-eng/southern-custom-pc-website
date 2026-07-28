@@ -36,3 +36,55 @@ footer{background:#030b19;color:#b6c5d9;padding:45px 0 20px}.footer-grid{display
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
 @media(max-width:900px){.menu-toggle{display:block}.site-nav{display:none;position:absolute;left:0;right:0;top:82px;background:#07162f;padding:22px 4%;flex-direction:column;align-items:stretch;border-top:1px solid #1d3557}.site-nav.open{display:flex}.site-nav a{padding:7px}.brand span{display:none}.hero{padding:70px 0}.hero-grid,.split,.booking-grid,.contact-grid{grid-template-columns:1fr}.hero-logo-card{max-width:480px;margin:auto}.card-grid{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 @media(max-width:600px){.section{padding:70px 0}.card-grid,.gallery-grid,.feature-list,.form-row,.stats{grid-template-columns:1fr}.stat{border-right:0!important;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.hero-actions{flex-direction:column}.button{width:100%}.footer-grid,.footer-brand{flex-direction:column;text-align:center}.footer-links{flex-wrap:wrap;justify-content:center}.trust-row{flex-direction:column;gap:7px}.booking-form{padding:21px}}
+/* ===== Real Photo Gallery ===== */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    margin: 0;
+    background: #0a2349;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,.25);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,.35);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item figcaption {
+    padding: 14px 16px;
+    color: #ffd55c;
+    font-weight: 800;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item img {
+        height: 300px;
+    }
+}
